@@ -70,15 +70,11 @@ useQuery will call automatic refetch with new values of page and searchString af
 
 ### Return values of useQuery hook:
 
-```
-
 | Name  | Description | Type |
 | ----- | ----------- | ---- |
 | isLoading | Request loading status | boolean |
-| data | Request response data | unknown |
+| data | Request response data | unknown or specified generic type |
 | error | Possible error occurred during request loading | string |
-
-```
 
 ## useMutation
 useMutation hook allows us to send mutation requests such as delete, post, put.
