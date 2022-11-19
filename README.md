@@ -1,4 +1,4 @@
-# vue-usequery = A simple tiny query library for VueJS 
+# vue-usequery - A simple, tiny query library for VueJS 
 
 ## Installation
 ```
@@ -74,3 +74,53 @@ useQuery will call automatic refetch with new values of page and searchString af
 |isLoading|Request loading status|boolean|
 |data|Request response data |unknown|
 |error|Possible error occurred during request loading|string|
+
+##useMutation
+useMutation hook allows us to send mutation requests such as delete, post, put.
+Example of mutation request:
+```
+import {mutateOptions, useMutation} from "vue-usequery";
+
+
+const createProduct = async (data) => {
+    const response = await fetch('https://dummyjson.com/products/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    return await response.json();
+}
+export const useCreateProductMutation = (options?: mutateOptions) => {
+    return useMutation((data) => createProduct(data), options)
+}
+```
+Basic usage of mutation request:
+```
+const {data, mutate, isLoading: loading, error} = useCreateProductMutation({
+  onSuccess: data => console.log(data),
+  onError: error => console.log(error)
+})
+const addProduct = () => {
+  mutate({ title: 'BMW Pencil232323',})
+}
+```
+In layout:
+```
+        <div>
+          <h1>New products</h1>
+          <button @click="addProduct">
+            Add product
+          </button>
+        </div>
+```
+### useMutation hook can optionally retrieve second argument as mutateOptions:
+```
+export type mutateOptions = {
+    onSuccess?: (data: any)=>void,
+    onError?: (error: any) => void,
+    onSettled?: () => void
+}
+```
+onSuccess - callback function that fires when request was done successfully
+onError - callback function that fires when error occurres during request
+onSettled - callback function that fires before request
