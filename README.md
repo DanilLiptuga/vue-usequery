@@ -124,5 +124,7 @@ export type mutateOptions = {
 }
 ```
 onSuccess - callback function that fires when request was done successfully
+
 onError - callback function that fires when error occurres during request
+
 onSettled - callback function that fires before request
