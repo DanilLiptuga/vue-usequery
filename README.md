@@ -67,3 +67,10 @@ const changePage = (value: number) => {
 </script>
 ```
 useQuery will call automatic refetch with new values of page and searchString after any of the dependencies have been changed
+
+### Return values of useQuery hook:
+| name     | description    | type    |
+|----------|----------------|------------|
+|isLoading|Request loading status|boolean|
+|data|Request response data |unknown|
+|error|Possible error occurred during request loading|string|
