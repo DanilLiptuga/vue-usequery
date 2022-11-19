@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    "outDir": "dist",
     "strict": false,
     "jsx": "preserve",
     "declaration": true,
@@ -16,7 +17,6 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "/fetching/mutateOptions.type.ts"
     ],
     "paths": {
       "@/*": [
