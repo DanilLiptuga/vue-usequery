@@ -69,13 +69,15 @@ const changePage = (value: number) => {
 useQuery will call automatic refetch with new values of page and searchString after any of the dependencies have been changed
 
 ### Return values of useQuery hook:
+```
 | name     | description    | type    |
 |----------|----------------|------------|
 |isLoading|Request loading status|boolean|
 |data|Request response data |unknown|
 |error|Possible error occurred during request loading|string|
+```
 
-##useMutation
+## useMutation
 useMutation hook allows us to send mutation requests such as delete, post, put.
 Example of mutation request:
 ```
