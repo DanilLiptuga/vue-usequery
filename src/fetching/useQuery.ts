@@ -1,8 +1,8 @@
 import {onMounted, Ref, ref, watch} from 'vue';
 
-export const useQuery = (queryFn: () => Promise<unknown>, deps?: Ref[]|Ref) => {
+export const useQuery = <T>(queryFn: () => Promise<T>, deps?: Ref[]|Ref) => {
     const isLoading = ref(false);
-    const data = ref<unknown>(null);
+    const data = ref<T>();
     const error = ref('');
     const fetchData = async () => {
         try {
@@ -18,7 +18,6 @@ export const useQuery = (queryFn: () => Promise<unknown>, deps?: Ref[]|Ref) => {
         fetchData()
     })
     watch(()=>deps, ()=>{
-        console.log(queryFn)
         fetchData()
     }, {deep: true})
     return {

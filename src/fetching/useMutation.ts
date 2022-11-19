@@ -1,9 +1,9 @@
 import {ref} from 'vue';
 import {mutateOptions} from "@/fetching/mutateOptions.type";
 
-export const useMutation = (mutateFn: (...props : unknown[]) => unknown, options?: mutateOptions) => {
+export const useMutation = <T>(mutateFn: (...props : unknown[]) => Promise<T>, options?: mutateOptions) => {
     const isLoading = ref(false);
-    const data = ref<unknown>(null);
+    const data = ref<T>();
     const error = ref('');
     const mutate = async (...props : unknown[]) => {
         try {
