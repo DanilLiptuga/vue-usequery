@@ -2,7 +2,7 @@ import { ref, onMounted, watch } from 'vue';
 
 const useQuery = (queryFn, deps) => {
     const isLoading = ref(false);
-    const data = ref(null);
+    const data = ref();
     const error = ref('');
     const fetchData = async () => {
         try {
@@ -20,7 +20,6 @@ const useQuery = (queryFn, deps) => {
         fetchData();
     });
     watch(() => deps, () => {
-        console.log(queryFn);
         fetchData();
     }, { deep: true });
     return {
@@ -30,7 +29,7 @@ const useQuery = (queryFn, deps) => {
 
 const useMutation = (mutateFn, options) => {
     const isLoading = ref(false);
-    const data = ref(null);
+    const data = ref();
     const error = ref('');
     const mutate = async (...props) => {
         try {
