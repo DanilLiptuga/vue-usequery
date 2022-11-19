@@ -88,14 +88,9 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "mutateOptions": function() { return /* reexport */ mutateOptions_type_namespaceObject.mutateOptions; },
   "useMutation": function() { return /* reexport */ useMutation; },
   "useQuery": function() { return /* reexport */ useQuery; }
 });
-
-// NAMESPACE OBJECT: ./src/fetching/mutateOptions.type.ts
-var mutateOptions_type_namespaceObject = {};
-__webpack_require__.r(mutateOptions_type_namespaceObject);
 
 ;// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 /* eslint-disable no-var */
@@ -175,12 +170,10 @@ const useMutation = (mutateFn, options) => {
     mutate
   };
 };
-;// CONCATENATED MODULE: ./src/fetching/mutateOptions.type.ts
+;// CONCATENATED MODULE: ./src/fetching/index.ts
+
 
 ;// CONCATENATED MODULE: ./src/main.ts
-
-
-
 
 ;// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
 
