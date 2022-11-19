@@ -71,6 +71,7 @@ useQuery will call automatic refetch with new values of page and searchString af
 ### Return values of useQuery hook:
 
 ```
+
 | Name  | Description | Type |
 | ----- | ----------- | ---- |
 | isLoading | Request loading status | boolean |
